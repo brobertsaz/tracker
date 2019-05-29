@@ -38,13 +38,12 @@ export default class HomeScreen extends React.Component {
           {locationExists ? (
             <MapView
               style={{ width: '100%', height: 300 }}
-              region={{
+              initialRegion={{
                 latitude: this.state.location.coords.latitude,
                 longitude: this.state.location.coords.longitude,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
               }}
-              provider={PROVIDER_GOOGLE}
               onRegionChange={this._handleMapRegionChange}
             >
               <MapView.Marker
